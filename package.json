@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Joonas Kykkänen <jonaskay@iki.fi>",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.18.0",
+    "@google-cloud/pubsub": "^2.3.0",
     "@google-cloud/storage": "^5.1.2"
   },
   "devDependencies": {
