@@ -3,7 +3,6 @@ cache:
   yarn: true
   directories:
     - "node_modules"
-    - "$HOME/google-cloud-sdk/"
 env:
   - CLOUD_PROJECT=august-strata-281417 CLOUD_REGION=europe-west1 CLOUD_FUNCTION_NAME=bindery-recaller PUBSUB_TOPIC_NAME=unpublish
 before_install:
