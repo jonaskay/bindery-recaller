@@ -1,0 +1,10 @@
+{
+  "name": "bindery-recaller",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Joonas Kykkänen <jonaskay@iki.fi>",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.18.0"
+  },
+  "license": "MIT"
+}
