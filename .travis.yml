@@ -14,6 +14,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account-travis-ci.json
 install:
   - gcloud config set project $GOOGLE_CLOUD_PROJECT
+  - yarn --frozen-lockfile
 script:
   - yarn test
 deploy:
