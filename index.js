@@ -1,12 +1,12 @@
-/**
- * Triggered from a message on a Cloud Pub/Sub topic.
- *
- * @param {!Object} event Event payload.
- * @param {!Object} context Metadata for the event.
- */
-exports.helloPubSub = (event, context) => {
-  const message = event.data
-    ? Buffer.from(event.data, "base64").toString()
-    : "Hello, World";
-  console.log(message);
+const { Storage } = require("@google-cloud/storage");
+
+const cleanup = require("./src/cleanup");
+
+module.exports = {
+  main: (event, context) => {
+    const storage = new Storage();
+    const bucket = storage.bucket(process.env.CLOUD_STORAGE_BUCKET);
+
+    cleanup(event.data, bucket);
+  },
 };
