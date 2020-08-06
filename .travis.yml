@@ -6,7 +6,7 @@ cache:
     - "node_modules"
     - "$HOME/google-cloud-sdk"
 env:
-  - CLOUDSDK_CORE_DISABLE_PROMPTS=1 CLOUD_PROJECT=august-strata-281417 CLOUD_REGION=europe-west1 CLOUD_FUNCTION_NAME=bindery-recaller PUBSUB_TOPIC_NAME=unpublish
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1 CLOUD_PROJECT_ID=august-strata-281417 CLOUD_REGION=europe-west1 CLOUD_FUNCTION_NAME=bindery-recaller TRIGGER_TOPIC=unpublisher-topic
 before_install:
   - openssl aes-256-cbc -K $encrypted_4cca25746a52_key -iv $encrypted_4cca25746a52_iv -in service-account-travis-ci.json.enc -out service-account-travis-ci.json -d
   - if [ ! -d ${HOME}/google-cloud-sdk/bin ]; then
@@ -17,7 +17,7 @@ before_install:
   - gcloud version
   - gcloud auth activate-service-account --key-file service-account-travis-ci.json
 install:
-  - gcloud config set project $CLOUD_PROJECT
+  - gcloud config set project $CLOUD_PROJECT_ID
   - yarn --frozen-lockfile
 script:
   - yarn test
