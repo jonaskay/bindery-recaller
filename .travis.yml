@@ -1,7 +1,9 @@
 dist: xenial
 language: node_js
 cache:
+  yarn: true
   directories:
+    - "node_modules"
     - "$HOME/google-cloud-sdk"
 env:
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1 CLOUD_PROJECT=august-strata-281417 CLOUD_REGION=europe-west1 CLOUD_FUNCTION_NAME=bindery-recaller PUBSUB_TOPIC_NAME=unpublish
