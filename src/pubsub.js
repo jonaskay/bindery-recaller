@@ -11,7 +11,7 @@ module.exports = {
   ) => {
     const timestamp = now.toISOString();
     const data = JSON.stringify({
-      project: project,
+      project,
       status: SUCCESS,
       timestamp,
     });
