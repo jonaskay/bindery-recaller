@@ -6,7 +6,7 @@ module.exports = {
   success: (
     project,
     topic = process.env.PUBSUB_TOPIC,
-    pubsub = new Pubsub(),
+    pubsub = new PubSub(),
     now = new Date()
   ) => {
     const timestamp = now.toISOString();
