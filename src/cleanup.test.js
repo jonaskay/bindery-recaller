@@ -19,7 +19,10 @@ beforeEach(() => {
 });
 
 test("deletes objects inside a folder", () => {
-  expect(deleteFiles).toHaveBeenCalledWith({ prefix: "foo/" });
+  expect(deleteFiles).toHaveBeenCalledWith({
+    delimiter: "foo/index.html",
+    prefix: "foo/",
+  });
 });
 
 test("sends a success message", () => {
