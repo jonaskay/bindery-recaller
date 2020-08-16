@@ -5,6 +5,9 @@ module.exports = (data, bucket) => {
   const { project } = message;
 
   bucket
-    .deleteFiles({ prefix: `${project.name}/` })
+    .deleteFiles({
+      delimiter: `${project.name}/index.html`,
+      prefix: `${project.name}/`,
+    })
     .then(() => success(project));
 };
